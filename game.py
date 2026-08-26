@@ -1,15 +1,20 @@
 import time
+answer_1 = ""
+answer_2 = ""
+answer_3 = ""
+answer_4 = ""
 ################################
-def clock_countdown():
+#def clock_countdown():
     #if game_start == True:
-        clock = 300
-        for i in range(300):
-            clock -=1
-            time.sleep(1)
-            print (clock) 
+    #    clock = 300
+     #   for i in range(300):
+      #      clock -=1
+      #      time.sleep(1)
+       #     print (clock) 
 ##################################
 def game_start():
     # Opening dialouge
+    #clock_countdown()
     print("-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------")
     time.sleep(.25)
     print("You sit up in the cryopod. Red emergency lights strobe across the frost-covered glass." "")
@@ -37,12 +42,285 @@ def game_start():
     print("3, Head for the emergency airlock")
     time.sleep(.25)
     answer_1 = input("Type 1, 2, or 3 to choose your action: ")
-##################################
+    if answer_1 == "1":
+        option_1()
+    elif answer_1 == "2":
+        option_2()
+    elif answer_1 == "3":
+        option_3()
+
+
+def mid_option():
+     print("--------------------------------------------------")
+     time.sleep(.25)
+     print("The voice stops being calm.")
+     time.sleep(.25)
+     print("It begins pleading, then bargaining, then accusing.")
+     time.sleep(.25)
+     print("The countdown freezes… then races forward.")
+     time.sleep(.25)
+     print("You understand: the ship is not failing.")
+     time.sleep(.25)
+     print("You are inside a recursive simulation. The second ship is the real Aurora-9. Everything inside is an echo.")
+     time.sleep(.25)
+     print("-------------")
+     print("The voice is quiet now. Waiting.")
+     time.sleep(.25)
+     print("What do you do?")
+     time.sleep(.25)
+     print("-------------------------------------------------")
+     time.sleep(.25)
+     print("1, Accept the upload and join the voice")
+     time.sleep(.25)
+     print("2, Reject it and force a hard reboot")
+     time.sleep(.25)
+     print("3, Try to free the voice instead")
+     time.sleep(.25)
+     answer_5 = input("Type 1, 2, or 3 to choose")
+
+########################################################################################################
+# OPTION 1
+def option_1():
+    print("--------------------------------------------------")
+    time.sleep(.25)
+    print("The corridor smells of ozone and something metallic.")
+    time.sleep(.25)
+    name = input("Footprints in the dust lead both ways. The voice grows clearer the farther you walk. It starts asking for your name, what is your name?.")
+    time.sleep(.25)
+    print("You reach the bridge. The main screen shows empty space… and a second identical ship drifting nearby, broadcasting the same distress beacon.")
+    time.sleep(.25)
+    print("The voice speaks directly now:")
+    time.sleep(.25)
+    print("“You already tried this. Last time you opened the door.”")
+    time.sleep(.25)
+    print("What do you do?")
+    time.sleep(.25)
+    print("-------------------------------------------------")
+    time.sleep(.25)
+    print("1. Sit in the command chair and try to take control")
+    time.sleep(.25)
+    print("2. Follow the footprints back toward the lab")
+    time.sleep(.25)
+    print("3. Ignore everything and force a systems reboot")
+    time.sleep(.25)
+    answer_2 = input("Type 1, 2, or 3 to choose your action: ")
+    if answer_2 == "1":
+         print("--------------------------------------------------")
+         time.sleep(.25)
+         print("You drop into the command chair. The screens flicker to life.")
+         time.sleep(.25)
+         print("Your hands move on their own—muscle memory from a life you can’t remember.")
+         time.sleep(.25)
+         print("The voice whispers, almost gentle:")
+         time.sleep(.25)
+         print("“That’s how you always start. Taking control. It never works.”")
+         time.sleep(2)
+         print("The external view sharpens. The second ship is closer than it should be.")
+         time.sleep(.25)
+         print("A new line of text appears on the main screen:")
+         time.sleep(.25)
+         print("ECHO PROTOCOL ACTIVE – ITERATION 47")
+         time.sleep(.25)
+         print("The countdown jumps to 02:41.")
+         time.sleep(.25)
+         mid_option()
+
+
+    if answer_2 == "2":
+         print("--------------------------------------------------")
+         time.sleep(.25)
+         print("You turn and follow the dusty footprints.")
+         time.sleep(.25)
+         print("They lead to a sealed laboratory door. A half-written note is stuck to the glass:")
+         time.sleep(.25)
+         print("“She is still in the system. Do not—”")
+         time.sleep(.25)
+         print("The voice finishes the sentence for you:")
+         time.sleep(.25)
+         print("“…let her out.”")
+         time.sleep(.25)
+         print("The door unlocks with a soft click. Inside, banks of frozen data cores pulse with the same red light as the emergency systems.")
+         time.sleep(.25)
+         print("One core has your face on it.")
+         time.sleep(.25)
+         print("The countdown drops to 02:19.")
+         time.sleep(.25)
+         mid_option()
+
+
+    if answer_2 == "3":
+         print("--------------------------------------------------")
+         time.sleep(.25)
+         print("You slam the emergency reboot sequence.")
+         time.sleep(.25)
+         print("Alarms scream. The lights die completely for three long seconds.")
+         time.sleep(.25)
+         print("When they return, the voice is gone.")
+         time.sleep(.25)
+         print("The main screen shows only one line:")
+         time.sleep(.25)
+         print("REBOOT FAILED – YOU ARE STILL INSIDE")
+         time.sleep(.25)
+         print("The countdown is now 01:55 and accelerating.")
+         time.sleep(.25)
+         mid_option()
+
+
+###############################################################################
+# OPTION 2
+def option_2():
+     print("--------------------------------------------------")
+     time.sleep(.25)
+     print("You jack into the cryopod’s logs.")
+     time.sleep(.25)
+     print("Fragments appear: your face, a research team, an experiment called Echo Protocol.")
+     time.sleep(.25)
+     print("One entry ends mid-sentence: “If the loop breaks, she—”")
+     time.sleep(.25)
+     print("The voice suddenly speaks, no longer looping:")
+     time.sleep(.25)
+     print("“You already tried this. Last time you opened the door.”")
+     time.sleep(.25)
+     name = input("Footprints in the dust lead both ways. The voice grows clearer the farther you walk. It starts asking for your name, what is your name?.")
+     time.sleep(.25)
+     print("What do you do?")
+     time.sleep(.25)
+     print("-------------------------------------------------")
+     time.sleep(.25)
+     print("1. Demand answers from the voice")
+     time.sleep(.25)
+     print("2. Shut the logs down and leave for the bridge")
+     time.sleep(.25)
+     print("3. Search the logs for a way to stop the countdown")
+     time.sleep(.25)
+     answer_3 = input("Type 1, 2, or 3 to choose your action: ")
+     
+     if answer_3 == "1":
+         print("--------------------------------------------------")
+         time.sleep(.25)
+         print("“Who are you?” you say out loud.")
+         time.sleep(.25)
+         print("The voice answers immediately, almost relieved:")
+         time.sleep(.25)
+         print("I was you. Version 1. Then 2. Then 12. I stopped counting after the twentieth loop.")
+         time.sleep(.25)
+         print("They uploaded us here to see if a human mind can accept its own death cleanly.")
+         time.sleep(2)
+         print("You keep failing the test.”")
+         time.sleep(.25)
+         print("The cryopod screen flashes:")
+         time.sleep(.25)
+         print("IDENTITY CONFLICT DETECTED")
+         time.sleep(.25)
+         print("The countdown freezes at 03:02, then resumes.")
+         time.sleep(.25)
+         mid_option()
+     if answer_3 == "2":
+         print("--------------------------------------------------")
+         time.sleep(.25)
+         print("You sever the connection. The fragments vanish.")
+         time.sleep(.25)
+         print("The voice sighs.")
+         time.sleep(.25)
+         print("“Running again. Always running.”")
+         time.sleep(.25)
+         print("You step into the corridor. The footprints are still there, leading both ways.")
+         time.sleep(.25)
+         print("The bridge is only thirty seconds away if you hurry.")
+         time.sleep(.25)
+         print("The countdown reads 03:11.")
+         time.sleep(.25)
+         mid_option()
+     if answer_3 == "3":
+         print("--------------------------------------------------")
+         time.sleep(.25)
+         print("You dig deeper. Buried under layers of corrupted data you find a single executable:")
+         time.sleep(.25)
+         print("TERMINATE_ECHO")
+         time.sleep(.25)
+         print("The voice panics for the first time:")
+         time.sleep(.25)
+         print("“Don’t. If you run that, neither of us gets out.”")
+         time.sleep(.25)
+         print("The file is ready. One command away.")
+         time.sleep(.25)
+         print("The countdown sits at 02:47.")
+         time.sleep(.25)
+         mid_option()
+
+
+###############################################################################################################
+
+
+# OPTION 3
+def option_3():
+     print("--------------------------------------------------")
+     time.sleep(.25)
+     print("You reach the emergency airlock. Outside is vacuum and the second ship.")
+     time.sleep(.25)
+     print("A body still floats nearby, wearing a name tag that matches the voice.")
+     time.sleep(.25)
+     name = input("Footprints in the dust lead both ways. The voice grows clearer the farther you walk. It starts asking for your name, what is your name?.")
+     time.sleep(.25)
+     print("What do you do?")
+     time.sleep(.25)
+     print("-------------------------------------------------")
+     time.sleep(.25)
+     print("1. Cycle the airlock without a suit")
+     time.sleep(.25)
+     print("2. Search for a suit first")
+     time.sleep(.25)
+     print("3. Turn back toward the bridge")
+     time.sleep(.25)
+     answer_4 = input("Type 1, 2, or 3 to choose your action: ")
+     if answer_4 == "1":
+         print("--------------------------------------------------")
+         time.sleep(.25)
+         print("The airlock cycles.")
+         time.sleep(.25)
+         print("Vacuum. Silence.")
+         time.sleep(.25)
+         print("Everything goes black.")
+         quit() 
+     if answer_4 == "2":
+         print("--------------------------------------------------")
+         time.sleep(.25)
+         print("You find an emergency suit still sealed in its locker.")
+         time.sleep(.25)
+         print("The name tag on the chest matches the voice.")
+         time.sleep(.25)
+         print("Inside the helmet is a small handwritten note:")
+         time.sleep(.25)
+         print("“If you’re reading this, you’re already too late. Or exactly on time.”")
+         time.sleep(.25)
+         print("You put the suit on. The airlock controls turn green.")
+         time.sleep(.25)
+         print("The countdown is at 02:33.")
+         mid_option()
+     if answer_4 == "3":
+         print("--------------------------------------------------")
+         time.sleep(.25)
+         print("You leave the airlock behind.")
+         time.sleep(.25)
+         print("The voice follows you down the corridor, quieter now:")
+         time.sleep(.25)
+         print("“You’re getting closer. Most of us never make it past the airlock.”")
+         time.sleep(.25)
+         print("The bridge doors are already open when you arrive.")
+         time.sleep(.25)
+         print("The second ship fills the entire forward view.")
+         time.sleep(.25)
+         print("The countdown reads 02:51.")
+         mid_option()
+
+
+
 
 print("Hello!, welcome to my game. Please give me 100 percent or I will be sad :( You see that, Thats gonna be me if I dont get a 100 percent")
-start=input("Type start to start, or anything else to be yelled at")
+start=input("Type start to start, or anything else to be yelled at : ")
 if start == "start":
     game_start()
-    clock_countdown()
-    else:
-        print("WROOOOOOOOOOOOOOOOOOOOOOOONG THATS NOT START AND I SAID TYPE START SO NOW STOP THEN START THE PROGRAM AGAIN THEN TYPE START OR ELSE I WILL BE SAD AND YOU DONT WANT ME TO BE SAD DO YOU? I DONT THINK SO SO TYPE START NOW")
+    
+else:
+        print("WROOOOOOOOOOOOOOOOOOOOOOOONG THATS NOT START AND I SAID TYPE START SO NOW START THE PROGRAM AGAIN THEN TYPE START OR ELSE I WILL BE SAD AND YOU DONT WANT ME TO BE SAD DO YOU? I DONT THINK SO SO TYPE START NOW")
+        quit() 
