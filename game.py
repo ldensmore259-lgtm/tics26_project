@@ -1,10 +1,33 @@
+#########################################################################################################################
+## Imports ###############################################
 import time
+
+#########################################################################################################################
+## Settings values to nothing or False ###################
 answer_1 = ""
 answer_2 = ""
 answer_3 = ""
 answer_4 = ""
 speedrun = False 
+##########################################################################################################################
+## The Prompts ############################################
+    
+first_prompt = (72*"-", "You sit up in the cryopod. Red emergency lights strobe across the frost-covered glass." "", "A soft female voice repeats from every speaker:", "“Don’t trust the countdown. Don’t trust the countdown.”", "A glowing panel on the wall shows:", "LIFE SUPPORT: 04:58", "The corridor outside is dark except for distant flickering lights.", "Your personal log is blank. You don’t remember your name.", "What do you do?", 72* "-", "1, Open the door and head for the bridge", "2, Stay and try to access the cryopod’s logs", "3, Head for the emergency airlock")
+mid_promt    = (72*"-", "The voice stops being calm.", "It begins pleading, then bargaining, then accusing.", "The countdown freezes… then races forward.", "You understand: the ship is not failing.", "You are inside a recursive simulation. The second ship is the real Aurora-9. Everything inside is an echo.", "-------------", "The voice is quiet now. Waiting.", "What do you do?", 72* "-", "1, Accept the upload and join the voice", "2, Reject it and force a hard reboot", "3, Try to free the voice instead")
 
+
+## Prompt 2 + answers #####################################
+
+prompt_2     = (72*"-","The corridor smells of ozone and something metallic.","You reach the bridge. The main screen shows empty space… and a second identical ship drifting nearby, broadcasting the same distress beacon.","The voice speaks directly now:","“You already tried this. Last time you opened the door.”","What do you do?",72*("-),"1. Sit in the command chair and try to take control","2. Follow the footprints back toward the lab","3. Ignore everything and force a systems reboot")                                                                                                                                                                                                                                                                                                                                              
+prompt_2_2   = (72*"-", "You turn and follow the dusty footprints.", "They lead to a sealed laboratory door. A half-written note is stuck to the glass:", "“She is still in the system. Do not—”", "The voice finishes the sentence for you:","“…let her out.”", "The door unlocks with a soft click. Inside, banks of frozen data cores pulse with the same red light as the emergency systems.", "One core has your face on it.", "The countdown drops to 02:19.")
+prompt_2_3   = (72*"-", "You slam the emergency reboot sequence.", "Alarms scream. The lights die completely for three long seconds.", "When they return, the voice is gone.", "The main screen shows only one line:", "REBOOT FAILED – YOU ARE STILL INSIDE", "The countdown is now 01:55 and accelerating.")
+promt_2_1    = (72*"-" ,"You drop into the command chair. The screens flicker to life.", "Your hands move on their own—muscle memory from a life you can’t remember." , "The voice whispers, almost gentle:", "“That’s how you always start. Taking control. It never works.”" , "The external view sharpens. The second ship is closer than it should be." , "A new line of text appears on the main screen:" , "ECHO PROTOCOL ACTIVE – ITERATION 47" , "The countdown jumps to 02:41.")
+
+## 
+
+
+###########################################################################################################################         
+## Game Setup ############################################
 def game_setup():
     speedrun = input("Do you want to do a speedrun? (y/n): ").lower()
     if speedrun == ("y"):
@@ -12,14 +35,10 @@ def game_setup():
     if speedrun == True:
         speed = 0.1
     else:
-        speed = 5
+        speed = 0.5
     return speed
 
-    
-first_prompt = (72*"-", "You sit up in the cryopod. Red emergency lights strobe across the frost-covered glass." "", "A soft female voice repeats from every speaker:", "“Don’t trust the countdown. Don’t trust the countdown.”", "A glowing panel on the wall shows:", "LIFE SUPPORT: 04:58", "The corridor outside is dark except for distant flickering lights.", "Your personal log is blank. You don’t remember your name.", "What do you do?", 72* "-", "1, Open the door and head for the bridge", "2, Stay and try to access the cryopod’s logs", "3, Head for the emergency airlock")
-mid_promt = (72*"-", "The voice stops being calm.", "It begins pleading, then bargaining, then accusing.", "The countdown freezes… then races forward.", "You understand: the ship is not failing.", "You are inside a recursive simulation. The second ship is the real Aurora-9. Everything inside is an echo.", "-------------", "The voice is quiet now. Waiting.", "What do you do?", 72* "-", "1, Accept the upload and join the voice", "2, Reject it and force a hard reboot", "3, Try to free the voice instead")
-prompt_1 = (72*"-","The corridor smells of ozone and something metallic.","You reach the bridge. The main screen shows empty space… and a second identical ship drifting nearby, broadcasting the same distress beacon.","The voice speaks directly now:","“You already tried this. Last time you opened the door.”","What do you do?",72*("-),"1. Sit in the command chair and try to take control","2. Follow the footprints back toward the lab","3. Ignore everything and force a systems reboot")
-
+          
 def game_start(speed):
     for line in first_prompt:
         time.sleep(speed)
@@ -37,7 +56,7 @@ def game_start(speed):
     elif answer_1 == "3":
         option_3()
 
-
+## Midway prompt ##################################
 def mid_option(speed):
     for sentence in mid_promt:
         time.sleep(speed)
@@ -53,85 +72,36 @@ def mid_option(speed):
         option_2()
     elif answer_5 == "3":
         option_3()
-     
-
 ########################################################################################################
 # OPTION 1
-def option_1():
-    for sentence in prompt_1:
+def option_1(speed):
+    for sentence in prompt_2:
         time.sleep(speed)
         print(sentence
     answer = False
+    ## error checking ##############################
     while answer = False:
         time.sleep(0.1)
         answer_2 = input("Type 1, 2, or 3 to choose your action: ")
         answer = answer_5 in "123"
+    ## Answer 1 ####################################
     if answer_2 == "1":
-        prompt_1_1()
-
-    
-    if answer_2 == "1":
-         print("--------------------------------------------------")
-         time.sleep(speed)
-         print("You drop into the command chair. The screens flicker to life.")
-         time.sleep(speed)
-         print("Your hands move on their own—muscle memory from a life you can’t remember.")
-         time.sleep(speed)
-         print("The voice whispers, almost gentle:")
-         time.sleep(speed)
-         print("“That’s how you always start. Taking control. It never works.”")
-         time.sleep(2)
-         print("The external view sharpens. The second ship is closer than it should be.")
-         time.sleep(speed)
-         print("A new line of text appears on the main screen:")
-         time.sleep(speed)
-         print("ECHO PROTOCOL ACTIVE – ITERATION 47")
-         time.sleep(speed)
-         print("The countdown jumps to 02:41.")
-         time.sleep(speed)
-         mid_option(speed)
-
-
+        for sentence in prompt_2_1:   
+            time.sleep(speed)
+            print(sentence)
+        mid_option(speed)
+    ## Answer 2 #####################################
     if answer_2 == "2":
-         print("--------------------------------------------------")
-         time.sleep(speed)
-         print("You turn and follow the dusty footprints.")
-         time.sleep(speed)
-         print("They lead to a sealed laboratory door. A half-written note is stuck to the glass:")
-         time.sleep(speed)
-         print("“She is still in the system. Do not—”")
-         time.sleep(speed)
-         print("The voice finishes the sentence for you:")
-         time.sleep(speed)
-         print("“…let her out.”")
-         time.sleep(speed)
-         print("The door unlocks with a soft click. Inside, banks of frozen data cores pulse with the same red light as the emergency systems.")
-         time.sleep(speed)
-         print("One core has your face on it.")
-         time.sleep(speed)
-         print("The countdown drops to 02:19.")
-         time.sleep(speed)
+         for sentence in prompt_2_2(speed):
+             time.sleep(speed)
+             print(sentence)
          mid_option(speed)
-
-
+    ## Answer 3 #####################################
     if answer_2 == "3":
-         print("--------------------------------------------------")
-         time.sleep(speed)
-         print("You slam the emergency reboot sequence.")
-         time.sleep(speed)
-         print("Alarms scream. The lights die completely for three long seconds.")
-         time.sleep(speed)
-         print("When they return, the voice is gone.")
-         time.sleep(speed)
-         print("The main screen shows only one line:")
-         time.sleep(speed)
-         print("REBOOT FAILED – YOU ARE STILL INSIDE")
-         time.sleep(speed)
-         print("The countdown is now 01:55 and accelerating.")
-         time.sleep(speed)
+         for sentence in prompt_2_3(speed):
+             time.sleep(speed)
+             print(sentence) 
          mid_option(speed)
-
-
 ###############################################################################
 # OPTION 2
 def option_2():
