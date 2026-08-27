@@ -16,9 +16,9 @@ def game_setup():
     return speed
 
     
-first_prompt = (72*"-", "You sit up in the cryopod. Red emergency lights strobe across the frost-covered glass." "", "A soft female voice repeats from every speaker:", "“Don’t trust the countdown. Don’t trust the countdown.”", "A glowing panel on the wall shows:", "LIFE SUPPORT: 04:58", "The corridor outside is dark except for distant flickering lights.", "Your personal log is blank. You don’t remember your name.", "What do you do?", "-------------------------------------------------", "1, Open the door and head for the bridge", "2, Stay and try to access the cryopod’s logs", "3, Head for the emergency airlock")
-mid_promt = (72*"-", "The voice stops being calm.", "It begins pleading, then bargaining, then accusing.", "The countdown freezes… then races forward.", "You understand: the ship is not failing.", "You are inside a recursive simulation. The second ship is the real Aurora-9. Everything inside is an echo.", "-------------", "The voice is quiet now. Waiting.", "What do you do?", "-------------------------------------------------", "1, Accept the upload and join the voice", "2, Reject it and force a hard reboot", "3, Try to free the voice instead")
-
+first_prompt = (72*"-", "You sit up in the cryopod. Red emergency lights strobe across the frost-covered glass." "", "A soft female voice repeats from every speaker:", "“Don’t trust the countdown. Don’t trust the countdown.”", "A glowing panel on the wall shows:", "LIFE SUPPORT: 04:58", "The corridor outside is dark except for distant flickering lights.", "Your personal log is blank. You don’t remember your name.", "What do you do?", 72* "-", "1, Open the door and head for the bridge", "2, Stay and try to access the cryopod’s logs", "3, Head for the emergency airlock")
+mid_promt = (72*"-", "The voice stops being calm.", "It begins pleading, then bargaining, then accusing.", "The countdown freezes… then races forward.", "You understand: the ship is not failing.", "You are inside a recursive simulation. The second ship is the real Aurora-9. Everything inside is an echo.", "-------------", "The voice is quiet now. Waiting.", "What do you do?", 72* "-", "1, Accept the upload and join the voice", "2, Reject it and force a hard reboot", "3, Try to free the voice instead")
+prompt_1 = (72*"-","The corridor smells of ozone and something metallic.","You reach the bridge. The main screen shows empty space… and a second identical ship drifting nearby, broadcasting the same distress beacon.","The voice speaks directly now:","“You already tried this. Last time you opened the door.”","What do you do?",72*("-),"1. Sit in the command chair and try to take control","2. Follow the footprints back toward the lab","3. Ignore everything and force a systems reboot")
 
 def game_start(speed):
     for line in first_prompt:
@@ -58,29 +58,18 @@ def mid_option(speed):
 ########################################################################################################
 # OPTION 1
 def option_1():
-    print("--------------------------------------------------")
-    time.sleep(speed)
-    print("The corridor smells of ozone and something metallic.")
-    time.sleep(speed)
-    name = input("Footprints in the dust lead both ways. The voice grows clearer the farther you walk. It starts asking for your name, what is your name?.")
-    time.sleep(speed)
-    print("You reach the bridge. The main screen shows empty space… and a second identical ship drifting nearby, broadcasting the same distress beacon.")
-    time.sleep(speed)
-    print("The voice speaks directly now:")
-    time.sleep(speed)
-    print("“You already tried this. Last time you opened the door.”")
-    time.sleep(speed)
-    print("What do you do?")
-    time.sleep(speed)
-    print("-------------------------------------------------")
-    time.sleep(speed)
-    print("1. Sit in the command chair and try to take control")
-    time.sleep(speed)
-    print("2. Follow the footprints back toward the lab")
-    time.sleep(speed)
-    print("3. Ignore everything and force a systems reboot")
-    time.sleep(speed)
-    answer_2 = input("Type 1, 2, or 3 to choose your action: ")
+    for sentence in prompt_1:
+        time.sleep(speed)
+        print(sentence
+    answer = False
+    while answer = False:
+        time.sleep(0.1)
+        answer_2 = input("Type 1, 2, or 3 to choose your action: ")
+        answer = answer_5 in "123"
+    if answer_2 == "1":
+        prompt_1_1()
+
+    
     if answer_2 == "1":
          print("--------------------------------------------------")
          time.sleep(speed)
