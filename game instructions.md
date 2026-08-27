@@ -20,12 +20,12 @@ Your goal is to design a fun, interactive experience that takes 5–10 minutes t
 ## Project Requirements
 
 #### Your program must:  
-1.	Welcome the player and ask for their name.  
-2.	Present choices using input and conditional statements (e.g., “Do you go left or right?”).  
-3.	Use at least one loop to handle replaying, invalid input, or repeated actions.  
-4.	Include at least two different endings based on player choices.  
+1.	**Welcome the player and ask for their name.**
+2.	**Present choices using input and conditional statements (e.g., “Do you go left or right?”).**
+3.	**Use at least one loop to handle replaying, invalid input, or repeated actions.**  
+4.	**Include at least two different endings based on player choices.**  
 5.	Track at least one variable (like score, health, or items).  
-6.	Be easy to read and run without errors.  
+6.	**Be easy to read and run without errors.**  
  7. AT LEAST ONE OF EACH of the following data type variables 
         
 * [ ] int
@@ -33,9 +33,9 @@ Your goal is to design a fun, interactive experience that takes 5–10 minutes t
 * [ ] string
 * [ ] bool 
 
-8. User defined function that meaningfully contributes to the game
-9. Data vector (list, dset, dict, tuple)
-10. A clear ending
+8. **User defined function that meaningfully contributes to the game**
+9. **Data vector (list, dset, dict, tuple)**
+10. **A clear ending**
 
 #### Your target is ~5 minutes of gameplay
 
