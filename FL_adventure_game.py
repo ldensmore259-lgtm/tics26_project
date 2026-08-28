@@ -11,10 +11,11 @@ answer_3 = ""
 answer_4 = ""
 answer_5 = ""
 speedrun = False 
-speed    =  ""
+speed    = ""
+time     = 300
 ##########################################################################################################################
 ## The Prompts ############################################    
-first_prompt = (72*"-", "You sit up in the cryopod. Red emergency lights strobe across the frost-covered glass." "", "A soft female voice repeats from every speaker:", "“Don’t trust the countdown. Don’t trust the countdown.”", "A glowing panel on the wall shows:", "LIFE SUPPORT: 04:58", "The corridor outside is dark except for distant flickering lights.", "Your personal log is blank. You don’t remember your name.", "What do you do?", 24* "-", "1, Open the door and head for the bridge", "2, Stay and try to access the cryopod’s logs", "3, Head for the emergency airlock")
+first_prompt = (72*"-", "You sit up in the cryopod. Red emergency lights strobe across the frost-covered glass." "", "A soft female voice repeats from every speaker:", "“Don’t trust the countdown. Don’t trust the countdown.”", "A glowing panel on the wall shows:", "LIFE SUPPORT: 04:58", "The corridor outside is dark except for distant flickering lights.", "Your personal log is blank. You don’t remember your name.", "What do you do?", 24* "-", "1, Open the door and head for the bridge (- 90 seconds)", "2, Stay and try to access the cryopod’s logs (-45 seconds)", "3, Head for the emergency airlock (-90 seconds")
 mid_promt    = (24*"-", "The voice stops being calm.", "It begins pleading, then bargaining, then accusing.", "The countdown freezes… then races forward.", "You understand: the ship is not failing.", "You are inside a recursive simulation. The second ship is the real Aurora-9. Everything inside is an echo.", "-------------", "The voice is quiet now. Waiting.", "What do you do?", 24* "-", "1, Accept the upload and join the voice", "2, Reject it and force a hard reboot", "3, Try to free the voice instead")
 ## Prompt 2 + answers #####################################
 prompt_2     = (72*"-","The corridor smells of ozone and something metallic.","You reach the bridge. The main screen shows empty space… and a second identical ship drifting nearby, broadcasting the same distress beacon.","The voice speaks directly now:","“You already tried this. Last time you opened the door。”","What do you do?",24*"-","1. Sit in the command chair and try to take control","2. Follow the footprints back toward the lab","3. Ignore everything and force a systems reboot")                                                                                                                                                                                                                                                                                                                                           
@@ -59,10 +60,13 @@ def game_start(speed):
    # answer_1 = input("Type 1, 2, or 3 to choose your action: ")
     if answer_1 == "1":
        option_1(speed)
+       time = time - 90
     elif answer_1 == "2":
         option_2(speed)
+        time = time - 45
     elif answer_1 == "3":
         option_3(speed)
+        time = time - 90
 #######################################################################################################
 ## Midway prompt ##################################
 def mid_option(speed):
@@ -140,6 +144,7 @@ def option_1(speed):
     for sentence in prompt_2:
         time.sleep(speed)
         print(sentence)
+    print("you have "time" seconds left")
     answer = False
     ## error checking #####
     while answer == False:
@@ -151,18 +156,21 @@ def option_1(speed):
         for sentence in prompt_2_1:   
             time.sleep(speed)
             print(sentence)
+        #print("you have "time" seconds left")
         mid_option(speed)
     ## Answer 2 #####################################
     if answer_2 == "2":
          for sentence in prompt_2_2:
              time.sleep(speed)
              print(sentence)
+         #print("you have "time" seconds left")
          mid_option(speed)
     ## Answer 3 #####################################
     if answer_2 == "3":
          for sentence in prompt_2_3:
              time.sleep(speed)
              print(sentence) 
+         #print("you have "time" seconds left")
          mid_option(speed)
 ###############################################################################
 # OPTION 2
@@ -170,6 +178,7 @@ def option_2(speed):
      for sentence in prompt_3:
          time.sleep(speed)
          print(sentence)
+     print("you have "time" seconds left")
     ## Error Checking ####
      answer = False
      while answer == False:
@@ -181,18 +190,21 @@ def option_2(speed):
          for sentence in prompt_3_1:
              time.sleep(speed)
              print(sentence)
+         #print("you have "time" seconds left")
          mid_option(speed)
 #######################################################
      if answer_3 == "2":
          for sentence in prompt_3_2:
              time.sleep(speed)
              print(sentence)
+         #print("you have "time" seconds left")
          mid_option(speed)
 ########################################################
      if answer_3 == "3":
          for sentence in prompt_3_3:
              time.sleep(speed)
              print(sentence)
+         #print("you have "time" seconds left")
          mid_option(speed)
 ###############################################################################################################
 # OPTION 3
@@ -200,6 +212,7 @@ def option_3(speed):
      for sentence in prompt_4:
          time.sleep(speed)
          print(sentence)
+     print("you have "time" seconds left")
          ## Answer Checking #
      answer = False 
      while answer is False:
@@ -210,18 +223,20 @@ def option_3(speed):
          for sentence in prompt_4_1:
              time.sleep(speed)
              print(sentence)
-         quit()
+         
 ########################################################
      if answer_4 == "2":
          for sentence in prompt_4_2:
              time.sleep(speed)
              print(sentence)
+         #print("you have "time" seconds left")
          mid_option(speed)
 ########################################################         
      if answer_4 == "3":
          for sentence in prompt_4_3:
              time.sleep(speed)
              print(sentence)
+         #print("you have "time" seconds left")
          mid_option(speed)
 ###################################################################################################################
 print("Hello!, welcome to my game. What's your name?")
